@@ -19,6 +19,7 @@ namespace IdentityTest.Controllers
 
         public ActionResult Index()
         {
+            TempData["message"] = "Test<br />Test\nTest";
             return View();
         }
 
@@ -54,6 +55,12 @@ namespace IdentityTest.Controllers
                 authenticationManager.SignIn(new AuthenticationProperties() { }, userIdentity);
                 //Response.Redirect("~/Login.aspx");
                 //return View("Login");
+
+                if (User.Identity.IsAuthenticated)
+                {
+                    TempData["message"] += "/n   User.Identity.IsAuthenticate working";
+                }
+
                 return View("Index");
             }
             else
