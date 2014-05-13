@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+//using IdentityTest.App_Start;
 
 namespace IdentityTest
 {
@@ -8,6 +9,7 @@ namespace IdentityTest
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+       
         }
     }
 }
